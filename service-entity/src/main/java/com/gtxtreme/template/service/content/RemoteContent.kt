@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RemoteContent (
+data class RemoteContent(
 
     @SerialName("wrapperType")
     var wrapperType: String? = null,

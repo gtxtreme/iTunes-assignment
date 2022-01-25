@@ -13,5 +13,4 @@ class DomainContentMapperImpl : DomainContentMapper {
         from.trackName ?: "",
         from.artistName ?: ""
     )
-
 }

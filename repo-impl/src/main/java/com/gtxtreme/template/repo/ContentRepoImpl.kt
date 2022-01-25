@@ -1,9 +1,7 @@
 package com.gtxtreme.template.repo
 
 import com.gtxtreme.template.content.DomainContentMapper
-import com.gtxtreme.template.content.DomainContentMapperImpl
 import com.gtxtreme.template.domain.content.Content
-import com.gtxtreme.template.service.content.RemoteContent
 import com.gtxtreme.template.service.itunecontent.MediaContentRemoteService
 
 class ContentRepoImpl(
@@ -18,5 +16,4 @@ class ContentRepoImpl(
         } else {
             domainContentMapper.map(contentRemoteService.getMediaDetailByAuthor(artistName).results)
         }
-
 }

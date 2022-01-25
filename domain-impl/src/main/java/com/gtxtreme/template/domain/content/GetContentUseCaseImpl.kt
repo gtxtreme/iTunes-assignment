@@ -3,7 +3,7 @@ package com.gtxtreme.template.domain.content
 import com.gtxtreme.template.repo.ContentRepository
 import timber.log.Timber
 
-class GetContentUseCaseImpl(private val contentRepository: ContentRepository): GetContentUseCase {
+class GetContentUseCaseImpl(private val contentRepository: ContentRepository) : GetContentUseCase {
 
     companion object {
         val TAG = "GetContentUseCaseImpl"

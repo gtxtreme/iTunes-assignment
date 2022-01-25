@@ -7,18 +7,16 @@ import retrofit2.Retrofit
 
 val serviceModule = module {
 
-
-    //Retrofit
+    // Retrofit
     single {
         getRetrofit(get())
     }
 
-    //TODO Room
+    // TODO Room
 
     single {
         getMediaContentService(get())
     }
 }
-
 
 fun getMediaContentService(retrofit: Retrofit): MediaContentRemoteService = retrofit.create(MediaContentRemoteService::class.java)
