@@ -3,11 +3,8 @@ package com.gtxtreme.template.interactor.content
 import com.gtxtreme.template.domain.base.Result
 import com.gtxtreme.template.domain.content.Content
 import com.gtxtreme.template.domain.content.GetContentUseCase
-import com.wednesday.template.domain.weather.City
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 
 class GetContentInteractorImpl(val getContentUseCase: GetContentUseCase) : GetContentInteractor {
@@ -34,5 +31,4 @@ class GetContentInteractorImpl(val getContentUseCase: GetContentUseCase) : GetCo
     companion object {
         const val TAG = "GetContentInteractorImpl"
     }
-
 }
