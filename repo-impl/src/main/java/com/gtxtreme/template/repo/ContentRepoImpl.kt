@@ -11,9 +11,10 @@ class ContentRepoImpl(
     ContentRepository {
     override suspend fun getAllContentByArtistName(artistName: String): List<Content> =
 
-        if (contentRemoteService.getMediaDetailByAuthor(artistName).resultCount == 0) {
+       val response = contentRemoteService.getMediaDetailByAuthor(artistName)
+        if (response.resultCount == 0) {
             emptyList()
         } else {
-            domainContentMapper.map(contentRemoteService.getMediaDetailByAuthor(artistName).results)
+            domainContentMapper.map(response.results)
         }
 }
