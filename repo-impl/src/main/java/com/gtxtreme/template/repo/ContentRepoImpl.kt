@@ -10,7 +10,6 @@ class ContentRepoImpl(
 ) :
     ContentRepository {
     override suspend fun getAllContentByArtistName(artistName: String): List<Content> =
-
         if (contentRemoteService.getMediaDetailByAuthor(artistName).resultCount == 0) {
             emptyList()
         } else {

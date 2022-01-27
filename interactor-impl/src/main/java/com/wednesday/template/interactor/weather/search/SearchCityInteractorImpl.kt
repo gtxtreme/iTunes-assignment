@@ -44,6 +44,7 @@ class SearchCityInteractorImpl(
                 listOf()
             }
             is Result.Success -> citiesResult.data
+
         }
         searchResultStateFlow.emit(list)
     }
