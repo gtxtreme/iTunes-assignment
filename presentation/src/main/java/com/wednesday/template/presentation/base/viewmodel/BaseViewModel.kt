@@ -1,13 +1,13 @@
 package com.wednesday.template.presentation.base.viewmodel
 
-import android.os.Bundle
+import android.os.Bundle // ktlint-disable import-ordering
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.wednesday.template.navigation.Navigator
 import com.wednesday.template.presentation.base.effect.Effect
-import com.wednesday.template.presentation.base.intent.Intent
+import com.gtxtreme.template.presentation.base.intent.Intent
 import com.wednesday.template.presentation.base.state.StateOwner
 import com.wednesday.template.presentation.base.state.statefulLiveData
 import com.wednesday.template.presentation.screen.Screen

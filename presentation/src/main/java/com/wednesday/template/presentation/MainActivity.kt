@@ -1,6 +1,6 @@
 package com.wednesday.template.presentation
 
-import android.annotation.SuppressLint
+import android.annotation.SuppressLint // ktlint-disable import-ordering
 import android.os.Bundle
 import androidx.annotation.IdRes
 import androidx.annotation.NavigationRes
@@ -11,8 +11,9 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.gtxtreme.template.presentation.R
 import com.wednesday.template.presentation.weather.home.HomeScreen
-import com.wednesday.template.resources.databinding.ActivityMainBinding
+import com.gtxtreme.template.resources.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

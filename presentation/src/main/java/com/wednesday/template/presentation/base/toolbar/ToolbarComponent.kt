@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.appbar.MaterialToolbar
-import com.wednesday.template.presentation.R
+import com.gtxtreme.template.presentation.R
 import com.wednesday.template.presentation.base.UIToolbar
 import com.wednesday.template.presentation.base.component.StatefulComponent
 import com.wednesday.template.presentation.base.extensions.asString

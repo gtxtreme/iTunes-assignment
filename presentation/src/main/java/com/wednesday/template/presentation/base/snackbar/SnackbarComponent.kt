@@ -3,7 +3,7 @@ package com.wednesday.template.presentation.base.snackbar
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import com.wednesday.template.presentation.R
+import com.gtxtreme.template.presentation.R
 import com.wednesday.template.presentation.base.component.Component
 import com.wednesday.template.presentation.base.effect.ShowSnackbarEffect
 import com.wednesday.template.presentation.base.extensions.asString

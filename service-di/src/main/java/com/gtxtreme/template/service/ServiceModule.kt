@@ -12,8 +12,7 @@ val serviceModule = module {
         getRetrofit(get())
     }
 
-    // TODO Room
-
+    // TODO Room for Favourites
     single {
         getMediaContentService(get())
     }

@@ -1,6 +1,7 @@
 package com.wednesday.template
 
 import android.app.Application
+import com.gtxtreme.template.BuildConfig
 import com.wednesday.template.domain.domainModule
 import com.wednesday.template.interactor.interactorModule
 import com.wednesday.template.navigation.navigationModule

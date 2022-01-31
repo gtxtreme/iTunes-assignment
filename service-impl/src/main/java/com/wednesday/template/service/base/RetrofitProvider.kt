@@ -1,9 +1,9 @@
 package com.wednesday.template.service.base
 
-import android.content.Context
+import android.content.Context // ktlint-disable import-ordering
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.wednesday.template.service.BuildConfig
+import com.gtxtreme.template.service.BuildConfig
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType

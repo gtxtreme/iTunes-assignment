@@ -1,10 +1,10 @@
 package com.wednesday.template.presentation.weather.home.list
 
-import android.view.ViewGroup
-import com.wednesday.template.presentation.base.list.renderer.ListItemRenderer
-import com.wednesday.template.presentation.base.list.viewholder.BaseViewHolder
+import android.view.ViewGroup // ktlint-disable import-ordering
+import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
+import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
 import com.wednesday.template.presentation.weather.UIDayWeatherHeading
-import com.wednesday.template.resources.databinding.ItemDayWeatherHeadingBinding
+import com.gtxtreme.template.resources.databinding.ItemDayWeatherHeadingBinding
 
 class UIDayWeatherHeadingRenderer : ListItemRenderer<UIDayWeatherHeading>() {
 

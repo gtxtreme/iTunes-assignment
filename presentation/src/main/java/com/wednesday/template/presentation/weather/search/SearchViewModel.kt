@@ -1,13 +1,13 @@
 package com.wednesday.template.presentation.weather.search
 
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewModelScope // ktlint-disable import-ordering
 import com.wednesday.template.interactor.weather.FavouriteWeatherInteractor
 import com.wednesday.template.interactor.weather.SearchCityInteractor
 import com.wednesday.template.navigation.search.SearchNavigator
 import com.wednesday.template.presentation.base.UIList
 import com.wednesday.template.presentation.base.UIText
 import com.wednesday.template.presentation.base.UIToolbar
-import com.wednesday.template.presentation.base.intent.IntentHandler
+import com.gtxtreme.template.presentation.base.intent.IntentHandler
 import com.wednesday.template.presentation.base.viewmodel.BaseViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow

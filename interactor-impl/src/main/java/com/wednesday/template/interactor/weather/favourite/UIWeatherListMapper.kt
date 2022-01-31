@@ -1,15 +1,15 @@
 package com.wednesday.template.interactor.weather.favourite
 
-import com.wednesday.template.domain.weather.Weather
+import com.wednesday.template.domain.weather.Weather // ktlint-disable import-ordering
 import com.wednesday.template.interactor.base.Mapper
 import com.wednesday.template.interactor.base.datetime.UIDateMapper
-import com.wednesday.template.interactor_impl.R
 import com.wednesday.template.presentation.base.UIList
 import com.wednesday.template.presentation.base.UIListItemBase
 import com.wednesday.template.presentation.base.UIText
 import com.wednesday.template.presentation.weather.UIDayWeatherHeading
 import com.wednesday.template.presentation.weather.UISearchCitiesPlaceholder
 import com.wednesday.template.presentation.weather.UIWeather
+import com.gtxtreme.template.interactor_impl.R
 import timber.log.Timber
 
 interface UIWeatherListMapper : Mapper<List<Weather>, UIList>
@@ -25,8 +25,9 @@ class UIWeatherListMapperImpl(
             .sortedBy { it.title }
             .map {
 
-                val currentWeather = it.dayWeatherList.firstOrNull { dayWeather -> dayWeather.isToday }
-                    ?: it.dayWeatherList.first()
+                val currentWeather =
+                    it.dayWeatherList.firstOrNull { dayWeather -> dayWeather.isToday }
+                        ?: it.dayWeatherList.first()
 
                 val dayWeatherList = mutableListOf<UIListItemBase>()
 

@@ -1,13 +1,13 @@
 package com.wednesday.template.presentation.weather.home
 
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewModelScope // ktlint-disable import-ordering
 import com.wednesday.template.interactor.weather.FavouriteWeatherInteractor
 import com.wednesday.template.navigation.home.HomeNavigator
-import com.wednesday.template.presentation.R
+import com.gtxtreme.template.presentation.R
 import com.wednesday.template.presentation.base.UIList
 import com.wednesday.template.presentation.base.UIText
 import com.wednesday.template.presentation.base.UIToolbar
-import com.wednesday.template.presentation.base.intent.IntentHandler
+import com.gtxtreme.template.presentation.base.intent.IntentHandler
 import com.wednesday.template.presentation.base.viewmodel.BaseViewModel
 import com.wednesday.template.presentation.weather.search.SearchScreen
 import kotlinx.coroutines.flow.launchIn

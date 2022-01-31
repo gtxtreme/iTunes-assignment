@@ -7,6 +7,7 @@ import com.wednesday.template.domain.weather.SearchCitiesUseCase
 import com.wednesday.template.interactor.base.CoroutineContextController
 import com.wednesday.template.interactor.weather.SearchCityInteractor
 import com.wednesday.template.presentation.base.UIList
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.catch
@@ -36,7 +37,7 @@ class SearchCityInteractorImpl(
             emit(UIList())
         }
 
-    override suspend fun search(term: String): Unit = coroutineContextController.switchToDefault {
+    override suspend fun search(term: String): Unit = coroutineScope {
         Timber.tag(TAG).d("search: term = $term")
         val list = when (val citiesResult = searchCitiesUseCase(term)) {
             is Result.Error -> {
