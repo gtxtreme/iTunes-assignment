@@ -6,9 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.gtxtreme.template.presentation.R
 import com.wednesday.template.presentation.base.UIListItemBase
-import com.gtxtreme.template.presentation.base.list.ListAdapter
-import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
-import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
+import com.wednesday.template.presentation.base.list.ListAdapter
+import com.wednesday.template.presentation.base.list.renderer.ListItemRenderer
 import kotlin.reflect.KClass
 
 abstract class BaseNestedListViewHolder<T : UIListItemBase>(
@@ -31,7 +30,7 @@ abstract class BaseNestedListViewHolder<T : UIListItemBase>(
     fun setNestedViewHolderPool(viewPool: RecyclerView.RecycledViewPool) =
         nestedRecyclerView.apply {
             nestedRecyclerView.layoutManager = LinearLayoutManager(itemView.context)
-            nestedRecyclerView.adapter = ListAdapter(intentChannel, renderers)
+            // nestedRecyclerView.adapter = ListAdapter(intentChannel, renderers)
             nestedRecyclerView.setRecycledViewPool(viewPool)
         }
 

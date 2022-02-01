@@ -1,8 +1,8 @@
 package com.wednesday.template.presentation.weather.home.list
 
 import com.wednesday.template.presentation.base.extensions.setUIText // ktlint-disable import-ordering
-import com.gtxtreme.template.presentation.base.intent.Intent
-import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
+import com.wednesday.template.presentation.base.intent.Intent
+import com.wednesday.template.presentation.base.list.viewholder.BaseViewHolder
 import com.wednesday.template.presentation.weather.UIDayWeather
 import com.gtxtreme.template.resources.databinding.ItemDayWeatherBinding
 import kotlinx.coroutines.channels.Channel

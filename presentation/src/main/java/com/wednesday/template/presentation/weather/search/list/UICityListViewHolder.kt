@@ -1,8 +1,8 @@
 package com.wednesday.template.presentation.weather.search.list
 
 import androidx.core.content.ContextCompat // ktlint-disable import-ordering
-import com.gtxtreme.template.presentation.base.intent.Intent
-import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
+import com.wednesday.template.presentation.base.intent.Intent
+import com.wednesday.template.presentation.base.list.viewholder.BaseViewHolder
 import com.wednesday.template.presentation.weather.UICity
 import com.wednesday.template.presentation.weather.search.SearchScreenIntent
 import com.gtxtreme.template.resources.R

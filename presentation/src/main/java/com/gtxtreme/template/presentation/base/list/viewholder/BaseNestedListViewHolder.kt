@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.gtxtreme.template.presentation.R
-import com.wednesday.template.presentation.base.UIListItemBase
+import com.gtxtreme.template.presentation.base.UIListItemBase
 import com.gtxtreme.template.presentation.base.list.ListAdapter
 import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
 import kotlin.reflect.KClass

@@ -3,20 +3,25 @@ package com.gtxtreme.template.interactor.content
 import com.gtxtreme.template.domain.base.Result
 import com.gtxtreme.template.domain.content.Content
 import com.gtxtreme.template.domain.content.GetContentUseCase
-import com.wednesday.template.interactor.base.CoroutineContextController
+import com.gtxtreme.template.interactor.base.CoroutineContextController
+import com.gtxtreme.template.presentation.base.UIList
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.map
 import timber.log.Timber
 
 class GetContentInteractorImpl(
     val getContentUseCase: GetContentUseCase,
-    private val coroutineContextController: CoroutineContextController
+    private val coroutineContextController: CoroutineContextController,
+    private val uiContentListResultsMapper: UIContentListResultsMapper,
 ) : GetContentInteractor {
 
     private val searchContentResultStateFlow = MutableSharedFlow<List<Content>>()
 
-    override val searchResults: Flow<List<Content>>
-        get() = searchContentResultStateFlow
+    override val searchResults: Flow<UIList>
+        get() = searchContentResultStateFlow.map {
+            uiContentListResultsMapper.map(it)
+        }
 
     override suspend fun search(param: String) {
         coroutineContextController.switchToDefault {

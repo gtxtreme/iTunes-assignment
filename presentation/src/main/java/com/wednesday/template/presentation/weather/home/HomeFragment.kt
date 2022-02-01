@@ -4,7 +4,7 @@ import com.wednesday.template.navigation.home.HomeNavigator // ktlint-disable im
 import com.wednesday.template.presentation.base.effect.Effect
 import com.wednesday.template.presentation.base.fragment.BindingProvider
 import com.wednesday.template.presentation.base.fragment.MainFragment
-import com.gtxtreme.template.presentation.base.list.ListComponent
+import com.wednesday.template.presentation.base.list.ListComponent
 import com.wednesday.template.presentation.base.toolbar.ToolbarComponent
 import com.wednesday.template.presentation.weather.home.list.UISearchCitiesPlaceholderRenderer
 import com.wednesday.template.presentation.weather.home.list.UIWeatherRenderer

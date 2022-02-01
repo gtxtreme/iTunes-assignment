@@ -18,4 +18,5 @@ val serviceModule = module {
     }
 }
 
-fun getMediaContentService(retrofit: Retrofit): MediaContentRemoteService = retrofit.create(MediaContentRemoteService::class.java)
+fun getMediaContentService(retrofit: Retrofit): MediaContentRemoteService =
+    retrofit.create(MediaContentRemoteService::class.java)

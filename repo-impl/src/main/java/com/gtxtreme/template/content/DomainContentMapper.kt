@@ -8,6 +8,7 @@ interface DomainContentMapper : Mapper<RemoteContent, Content>
 
 class DomainContentMapperImpl : DomainContentMapper {
     override fun map(from: RemoteContent): Content = Content(
+        from.artistId ?: 0,
         from.artworkUrl100 ?: "",
         from.artistName ?: "",
         from.trackName ?: "",

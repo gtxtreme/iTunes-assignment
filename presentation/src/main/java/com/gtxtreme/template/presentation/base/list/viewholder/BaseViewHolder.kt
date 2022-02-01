@@ -2,7 +2,7 @@ package com.gtxtreme.template.presentation.base.list.viewholder
 
 import androidx.recyclerview.widget.RecyclerView // ktlint-disable import-ordering
 import androidx.viewbinding.ViewBinding
-import com.wednesday.template.presentation.base.UIListItemBase
+import com.gtxtreme.template.presentation.base.UIListItemBase
 import com.gtxtreme.template.presentation.base.intent.Intent
 import kotlinx.coroutines.channels.Channel
 

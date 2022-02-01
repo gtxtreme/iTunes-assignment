@@ -38,7 +38,7 @@ fun getRetrofit(context: Context, vararg interceptors: HttpLoggingInterceptor): 
         build()
     }
 
-    val apiBaseUrl = "https://www.itunes.com/"
+    val apiBaseUrl = "https://itunes.apple.com/"
     val contentType = "application/json".toMediaType()
     val json = Json {
         ignoreUnknownKeys = true

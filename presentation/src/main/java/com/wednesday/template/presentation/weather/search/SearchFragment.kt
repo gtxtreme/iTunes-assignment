@@ -1,15 +1,15 @@
 package com.wednesday.template.presentation.weather.search
 
-import androidx.core.widget.addTextChangedListener // ktlint-disable import-ordering
-import com.wednesday.template.navigation.search.SearchNavigator
+import androidx.core.widget.addTextChangedListener
 import com.gtxtreme.template.presentation.R
+import com.gtxtreme.template.resources.databinding.FragmentSearchBinding
+import com.wednesday.template.navigation.search.SearchNavigator
 import com.wednesday.template.presentation.base.effect.Effect
 import com.wednesday.template.presentation.base.fragment.BindingProvider
 import com.wednesday.template.presentation.base.fragment.MainFragment
-import com.gtxtreme.template.presentation.base.list.ListComponent
+import com.wednesday.template.presentation.base.list.ListComponent
 import com.wednesday.template.presentation.base.toolbar.ToolbarComponent
 import com.wednesday.template.presentation.weather.search.list.UICityListRenderer
-import com.gtxtreme.template.resources.databinding.FragmentSearchBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchFragment :
@@ -37,9 +37,6 @@ class SearchFragment :
         addTextListener(binding)
     }
 
-    override fun onEffect(effect: Effect) {
-    }
-
     override fun onState(screenState: SearchScreenState) {
         super.onState(screenState)
         listComponent.setData(screenState.searchList)
@@ -49,5 +46,8 @@ class SearchFragment :
         searchEditText.addTextChangedListener {
             it?.let { viewModel.onIntent(SearchScreenIntent.SearchCities(it.toString())) }
         }
+    }
+
+    override fun onEffect(effect: Effect) {
     }
 }

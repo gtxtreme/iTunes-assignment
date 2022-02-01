@@ -7,7 +7,7 @@ import com.wednesday.template.navigation.search.SearchNavigator
 import com.wednesday.template.presentation.base.UIList
 import com.wednesday.template.presentation.base.UIText
 import com.wednesday.template.presentation.base.UIToolbar
-import com.gtxtreme.template.presentation.base.intent.IntentHandler
+import com.wednesday.template.presentation.base.intent.IntentHandler
 import com.wednesday.template.presentation.base.viewmodel.BaseViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow

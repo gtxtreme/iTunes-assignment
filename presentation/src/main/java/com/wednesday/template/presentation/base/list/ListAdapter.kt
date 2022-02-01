@@ -3,10 +3,10 @@ package com.wednesday.template.presentation.base.list
 import android.view.ViewGroup // ktlint-disable import-ordering
 import androidx.recyclerview.widget.RecyclerView
 import com.wednesday.template.presentation.base.UIListItemBase
-import com.gtxtreme.template.presentation.base.intent.Intent
+import com.wednesday.template.presentation.base.intent.Intent
 import com.wednesday.template.presentation.base.list.renderer.ListItemRenderer
 import com.wednesday.template.presentation.base.list.viewholder.BaseNestedListViewHolder
-import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
+import com.wednesday.template.presentation.base.list.viewholder.BaseViewHolder
 import kotlinx.coroutines.channels.Channel
 import java.lang.Exception
 import kotlin.reflect.KClass

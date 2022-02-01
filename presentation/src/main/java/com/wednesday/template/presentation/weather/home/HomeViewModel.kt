@@ -7,7 +7,7 @@ import com.gtxtreme.template.presentation.R
 import com.wednesday.template.presentation.base.UIList
 import com.wednesday.template.presentation.base.UIText
 import com.wednesday.template.presentation.base.UIToolbar
-import com.gtxtreme.template.presentation.base.intent.IntentHandler
+import com.wednesday.template.presentation.base.intent.IntentHandler
 import com.wednesday.template.presentation.base.viewmodel.BaseViewModel
 import com.wednesday.template.presentation.weather.search.SearchScreen
 import kotlinx.coroutines.flow.launchIn

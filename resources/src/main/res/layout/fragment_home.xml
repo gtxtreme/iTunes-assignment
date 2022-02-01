@@ -11,7 +11,7 @@
         android:textSize="22sp"
         android:padding="8dp"
         android:gravity="center"
-        tools:text="Tap on Search to look for weather.."
+        tools:text="@string/tap_on_search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

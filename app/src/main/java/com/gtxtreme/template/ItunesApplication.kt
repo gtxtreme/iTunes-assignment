@@ -7,6 +7,7 @@ import com.gtxtreme.template.navigation.navigationModule
 import com.gtxtreme.template.presentation.presentationModule
 import com.gtxtreme.template.repo.repoModule
 import com.gtxtreme.template.service.serviceModule
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
@@ -20,6 +21,7 @@ class ItunesApplication: Application() {
         }
 
         startKoin {
+            androidContext(applicationContext)
             modules(
                 serviceModule,
                 repoModule,

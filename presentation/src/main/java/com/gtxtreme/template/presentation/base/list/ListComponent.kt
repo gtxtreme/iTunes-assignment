@@ -2,7 +2,7 @@ package com.gtxtreme.template.presentation.base.list
 
 import androidx.lifecycle.ViewModel // ktlint-disable import-ordering
 import com.gtxtreme.template.presentation.R
-import com.wednesday.template.presentation.base.UIListItemBase
+import com.gtxtreme.template.presentation.base.UIListItemBase
 import com.gtxtreme.template.presentation.base.intent.Intent
 import com.gtxtreme.template.presentation.base.intent.IntentHandler
 import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer

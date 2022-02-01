@@ -52,7 +52,7 @@ abstract class MainFragment<
     @CallSuper
     override fun onState(screenState: SCREEN_STATE) {
         internalToolbarComponent.setData(screenState.toolbar)
-        // loadingComponent.setData(screenState.showLoading)
+        loadingComponent.setData(screenState.isLoading)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
