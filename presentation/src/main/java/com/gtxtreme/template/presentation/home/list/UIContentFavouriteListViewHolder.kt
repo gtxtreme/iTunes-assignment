@@ -1,20 +1,18 @@
-package com.gtxtreme.template.presentation.search.list
+package com.gtxtreme.template.presentation.home.list
 
 import androidx.core.content.ContextCompat
 import com.gtxtreme.template.presentation.R
 import com.gtxtreme.template.presentation.base.intent.Intent
 import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
 import com.gtxtreme.template.presentation.content.UIContent
-import com.gtxtreme.template.presentation.search.SearchScreenIntent
+import com.gtxtreme.template.presentation.home.HomeScreenIntent
 import com.gtxtreme.template.resources.databinding.ListItemContentBinding
 import kotlinx.coroutines.channels.Channel
 
-class UIContentListViewHolder(val binding: ListItemContentBinding) :
-    BaseViewHolder<UIContent>(binding) {
-
+class UIContentFavouriteListViewHolder(val binding: ListItemContentBinding) : BaseViewHolder<UIContent>(binding) {
     override fun onSetupIntents(intentChannel: Channel<Intent>) {
         binding.imageViewFavourite.setOnClickListener {
-            intentChannel.trySend(SearchScreenIntent.ToggleFavourite(item))
+            intentChannel.trySend(HomeScreenIntent.RemoveFavourite(item))
         }
     }
 

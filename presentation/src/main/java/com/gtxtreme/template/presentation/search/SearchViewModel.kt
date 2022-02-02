@@ -1,13 +1,13 @@
 package com.gtxtreme.template.presentation.search
 
 import androidx.lifecycle.viewModelScope
+import com.gtxtreme.template.interactor.content.FavouriteContentInteractor
 import com.gtxtreme.template.interactor.content.GetContentInteractor
 import com.gtxtreme.template.navigation.BaseNavigator // ktlint-disable import-ordering
 import com.gtxtreme.template.presentation.R
 import com.gtxtreme.template.presentation.base.UIList
 import com.gtxtreme.template.presentation.base.UIText
 import com.gtxtreme.template.presentation.base.UIToolbar
-import com.gtxtreme.template.presentation.base.effect.ShowSnackbarEffect
 import com.gtxtreme.template.presentation.base.intent.IntentHandler
 import com.gtxtreme.template.presentation.base.viewmodel.BaseViewModel
 import kotlinx.coroutines.FlowPreview
@@ -18,7 +18,10 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class SearchViewModel(private val getContentInteractor: GetContentInteractor) :
+class SearchViewModel(
+    private val getContentInteractor: GetContentInteractor,
+    private val favouriteContentInteractor: FavouriteContentInteractor
+) :
     BaseViewModel<SearchScreen, SearchScreenState, BaseNavigator>(),
     IntentHandler<SearchScreenIntent> {
 
@@ -66,7 +69,7 @@ class SearchViewModel(private val getContentInteractor: GetContentInteractor) :
                     return@onEach
                 }
                 setState {
-                    copy(isLoading = true, list = UIList())
+                    copy(isLoading = true)
                 }
                 getContentInteractor.search(artistName)
             }.launchIn(viewModelScope)
@@ -76,18 +79,17 @@ class SearchViewModel(private val getContentInteractor: GetContentInteractor) :
         when (intent) {
             is SearchScreenIntent.SearchContent -> {
                 Timber.d("Artist to search: ${intent.artistName}")
-                viewModelScope.launch {
-                    getContentResponseFlow.value = intent.artistName
-                }
+                getContentResponseFlow.value = intent.artistName
             }
             is SearchScreenIntent.ToggleFavourite -> {
-                setEffect(
-                    ShowSnackbarEffect(
-                        message = UIText {
-                            block("Favourite Icon Pressed")
-                        }
-                    )
-                )
+                viewModelScope.launch {
+                    Timber.d("Toggling Favourite for ${intent.content.artistId}, Current State: ${intent.content.isFavourite}")
+                    if (intent.content.isFavourite) {
+                        favouriteContentInteractor.removeContentAsFavourite(intent.content)
+                    } else {
+                        favouriteContentInteractor.markContentAsFavourite(intent.content)
+                    }
+                }
             }
         }
     }

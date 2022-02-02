@@ -26,8 +26,9 @@ class SearchCityInteractorImpl(
     private val searchResultStateFlow = MutableSharedFlow<List<City>>()
 
     override val searchResultsFlow: Flow<UIList> = favouriteCitiesFlowUseCase(Unit)
-        .combine(searchResultStateFlow) { favoriteCites, searchResults ->
-            citySearchResultMapper.map(favoriteCites, searchResults)
+        .combine(searchResultStateFlow) { favoriteContentList, searchResults ->
+            Timber.d("Favourite List: $favoriteContentList")
+            citySearchResultMapper.map(favoriteContentList, searchResults)
         }
         .onEach {
             Timber.tag(TAG).d("searchResultsFlow: emit = $it")

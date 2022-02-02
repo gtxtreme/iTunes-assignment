@@ -28,6 +28,7 @@
             android:contentDescription=""
             android:padding="4dp"
             android:src="@drawable/ic_music"
+            app:layout_constraintBottom_toBottomOf="@+id/textTrackName"
             app:layout_constraintEnd_toStartOf="@id/textTrackName"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,11 +41,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|start"
-            app:layout_constraintBottom_toTopOf="@id/textArtistName"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textArtistName"
+            app:layout_constraintEnd_toStartOf="@id/imageViewFavourite"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/musicLogo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_chainStyle="spread"
             tools:text="Kun Faya Kun" />
 
         <ImageView
@@ -53,8 +55,10 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:src="@drawable/ic_artist"
+            app:layout_constraintBottom_toBottomOf="@+id/textArtistName"
+            app:layout_constraintEnd_toStartOf="@id/textArtistName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/musicLogo" />
+            app:layout_constraintTop_toTopOf="@+id/textArtistName" />
 
         <TextView
             android:id="@+id/textArtistName"
@@ -63,9 +67,10 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical|start"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imageViewFavourite"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/artistLogo"
-            app:layout_constraintTop_toTopOf="@+id/artistLogo"
+            app:layout_constraintTop_toBottomOf="@+id/textTrackName"
             tools:text="A.R. Rahman" />
 
 
