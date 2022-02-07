@@ -5,7 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class UIContent(
-    val artistId: String,
+    val artistId: Int,
     val artistName: String,
     val trackName: String,
-) : UIListItemBase(artistId)
+    val trackId: Int,
+    val isFavourite: Boolean
+) : UIListItemBase("UIContent$artistId")

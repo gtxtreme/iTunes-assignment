@@ -12,15 +12,9 @@ import kotlinx.coroutines.channels.Channel
 class UIContentListViewHolder(val binding: ListItemContentBinding) :
     BaseViewHolder<UIContent>(binding) {
 
-    private val likedDrawable =
-        ContextCompat.getDrawable(binding.root.context, R.drawable.ic_favorite)
-    private val unlikedDrawable =
-        ContextCompat.getDrawable(binding.root.context, R.drawable.ic_favorite_border)
-
     override fun onSetupIntents(intentChannel: Channel<Intent>) {
         binding.imageViewFavourite.setOnClickListener {
-            intentChannel.trySend(SearchScreenIntent.ToggleFavourite)
-            binding.imageViewFavourite.setImageDrawable(likedDrawable)
+            intentChannel.trySend(SearchScreenIntent.ToggleFavourite(item))
         }
     }
 
@@ -34,7 +28,13 @@ class UIContentListViewHolder(val binding: ListItemContentBinding) :
                 textTrackName.text = it
             }
 
-            imageViewFavourite.setImageDrawable(unlikedDrawable)
+            compareAndSet({ isFavourite }) {
+                val drawable = ContextCompat.getDrawable(
+                    root.context,
+                    if (it) R.drawable.ic_favorite else R.drawable.ic_favorite_border
+                )
+                imageViewFavourite.setImageDrawable(drawable)
+            }
         }
     }
 }

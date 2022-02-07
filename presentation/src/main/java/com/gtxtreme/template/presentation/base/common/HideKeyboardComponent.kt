@@ -4,8 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import com.wednesday.template.presentation.base.component.Component
-import com.wednesday.template.presentation.base.effect.HideKeyboardEffect
+import com.gtxtreme.template.presentation.base.component.Component
+import com.gtxtreme.template.presentation.base.effect.HideKeyboardEffect
 
 class HideKeyboardComponent(
     private val activity: Activity?
