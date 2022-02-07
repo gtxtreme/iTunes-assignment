@@ -32,14 +32,17 @@ class HomeFragment :
 
     override fun onState(screenState: HomeScreenState) {
         super.onState(screenState)
-        if (screenState.items.size() == 0) {
-            binding?.emptyText?.show()
-            binding?.homeRecyclerView?.hide()
-        } else {
-            binding?.emptyText?.hide()
-            binding?.homeRecyclerView?.show()
-            listComponent.setData(screenState.items)
+        binding?.apply {
+            if (screenState.items.size() == 0) {
+                emptyText.show()
+                homeRecyclerView.hide()
+            } else {
+                emptyText.hide()
+                homeRecyclerView.show()
+                listComponent.setData(screenState.items)
+            }
         }
+
     }
 
     override fun onEffect(effect: Effect) {}

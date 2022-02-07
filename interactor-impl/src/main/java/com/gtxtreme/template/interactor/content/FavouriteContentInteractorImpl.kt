@@ -33,12 +33,6 @@ class FavouriteContentInteractorImpl(
         }
     }
 
-    override fun getAllFavouriteContent(): Flow<List<UIContent>> {
-        return getFavouriteContentUseCase(Unit)
-            .map(uiContentMapper::mapFavouriteContent)
-            .flowOn(coroutineContextController.dispatcherDefault)
-    }
-
     override fun getFavouriteContentUIList(): Flow<UIList> {
         return getFavouriteContentUseCase(Unit).map {
             UIList(uiContentMapper.mapFavouriteContent(it))

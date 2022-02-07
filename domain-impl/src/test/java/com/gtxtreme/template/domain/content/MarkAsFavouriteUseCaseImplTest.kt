@@ -48,7 +48,7 @@ class MarkAsFavouriteUseCaseImplTest {
         runBlocking {
             // Given
             whenever(contentRepository.markContentAsFavourite(testContent))
-                .thenReturn(Unit)
+                .thenThrow(RuntimeException())
 
             // When
             val result = markAsFavouriteUseCaseImpl(testContent)

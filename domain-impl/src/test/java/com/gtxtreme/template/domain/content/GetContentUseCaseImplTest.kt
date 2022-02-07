@@ -9,6 +9,7 @@ import org.mockito.kotlin.mock
 import org.mockito.kotlin.times
 import org.mockito.kotlin.verifyNoMoreInteractions
 import org.mockito.kotlin.whenever
+import org.mockito.kotlin.verify
 import java.lang.RuntimeException
 import kotlin.test.assertTrue
 

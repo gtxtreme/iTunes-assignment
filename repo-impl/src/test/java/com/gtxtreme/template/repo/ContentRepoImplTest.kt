@@ -99,7 +99,7 @@ class ContentRepoImplTest {
 
             contentRepository.markContentAsFavourite(content)
 
-            verify(mediaContentLocalService, times(2)).markContentAsFavourite(any())
+            verify(mediaContentLocalService, times(1)).markContentAsFavourite(any())
             verify(domainContentMapper, times(1)).mapContent(any())
             verifyNoMoreInteractionsInternal()
         }

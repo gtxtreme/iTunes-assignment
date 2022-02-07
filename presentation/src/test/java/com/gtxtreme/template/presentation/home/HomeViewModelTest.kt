@@ -13,10 +13,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
-import org.mockito.kotlin.mock
-import org.mockito.kotlin.times
-import org.mockito.kotlin.verify
-import org.mockito.kotlin.whenever
+import org.mockito.kotlin.*
 
 @ExperimentalCoroutinesApi
 class HomeViewModelTest : BaseViewModelTest() {
@@ -48,22 +45,11 @@ class HomeViewModelTest : BaseViewModelTest() {
 
     @Test
     fun `Given _ when state is Remove Favourite then remove the favourite from the list`() {
-        // Given
-        val testUiContent = UIContent(1, "Arijit Singh", "Bekhayali", 1234, true)
-        val initialState = HomeScreenState(
-            toolbar = UIToolbar(
-                title = UIText {
-                    block("Itunes API")
-                },
-                hasBackButton = false,
-                menuIcon = R.drawable.ic_search
-            ),
-            text = UIText {
-                block(R.string.tap_on_search)
-            }
-        )
-        val testUIList = UIList(testUiContent)
+
         runBlocking {
+            // Given
+            val testUiContent = UIContent(1, "Arijit Singh", "Bekhayali", 1234, true)
+
             // Given
             whenever(getFavouriteContentInteractor.removeContentAsFavourite(testUiContent))
                 .thenReturn(Unit)
@@ -72,8 +58,9 @@ class HomeViewModelTest : BaseViewModelTest() {
             homeViewModel.onIntent(HomeScreenIntent.RemoveFavourite(testUiContent))
 
             // Then
-            val observer = mockObserver<HomeScreenState>()
-            verify(observer).onChanged(initialState.copy(items = testUIList))
+            verify(getFavouriteContentInteractor, times(1)).removeContentAsFavourite(testUiContent)
+
         }
     }
+
 }
