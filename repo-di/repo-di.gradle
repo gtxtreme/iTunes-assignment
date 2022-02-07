@@ -10,6 +10,7 @@ dependencies {
     implementation project(":repo")
     implementation project(":repo-impl")
     implementation project(":service")
+    implementation project(":service-impl")
 
     def ext = rootProject.ext
 
