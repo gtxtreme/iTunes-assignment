@@ -7,5 +7,5 @@ import retrofit2.http.Query
 interface MediaContentRemoteService {
 
     @GET("search")
-    fun getMediaDetailByAuthor(@Query("term", encoded = true) authorName: String): RemoteResult
+    suspend fun getMediaDetailByAuthor(@Query("term", encoded = true) authorName: String): RemoteResult
 }

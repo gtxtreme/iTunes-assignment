@@ -6,7 +6,7 @@ import timber.log.Timber
 class GetContentUseCaseImpl(private val contentRepository: ContentRepository) : GetContentUseCase {
 
     companion object {
-        val TAG = "GetContentUseCaseImpl"
+        const val TAG = "GetContentUseCaseImpl"
     }
 
     override suspend fun invokeInternal(param: String): List<Content> {
