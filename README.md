@@ -1,3 +1,21 @@
+## Itunes API
+
+An Android Application built to fetch sample content from the [Itunes API] (https://itunes.apple.com) as an assignment to get hands on the best practices followed for projects at Wednesday
+
+## Screens
+<kbd>
+<img src="https://user-images.githubusercontent.com/98303832/152785866-f4e1832d-6b95-4d30-a82d-6bb1c9708282.png" height="400"/>
+</kbd>
+
+
+## Getting Started
+- Open the project in Android Studio and sync dependencies with gradle.
+- Run the app by pressing the run button in android studio or by pressing `control + R`.
+- Go through and setup the scripts in the [scripts](https://github.com/wednesday-solutions/android-template/tree/master/scripts) directory.
+
+
+## Credits:
+
 <img align="left" src="https://github.com/wednesday-solutions/android-template/blob/master/android_template_github.svg" width="480" height="540" />
 
 <div>
@@ -36,7 +54,5 @@
 <br/>
 <br/>
 
-## Getting Started
-- Open the project in Android Studio and sync dependencies with gradle.
-- Run the app by pressing the run button in android studio or by pressing `control + R`.
-- Go through and setup the scripts in the [scripts](https://github.com/wednesday-solutions/android-template/tree/master/scripts) directory.
+
+
