@@ -8,4 +8,6 @@ interface MediaContentRemoteService {
 
     @GET("search")
     suspend fun getMediaDetailByAuthor(@Query("term", encoded = true) authorName: String): RemoteResult
+
+
 }

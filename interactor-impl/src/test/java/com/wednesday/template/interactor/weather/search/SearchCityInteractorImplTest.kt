@@ -109,7 +109,6 @@ class SearchCityInteractorImplTest : InteractorTest() {
             // When
             interactor.searchResultsFlow.test {
                 interactor.search(searchTerm)
-
                 val result = awaitItem()
 
                 // Then

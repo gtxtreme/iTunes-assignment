@@ -14,12 +14,14 @@ class ContentRepoImpl(
     private val domainContentMapper: DomainContentMapper,
 ) :
     ContentRepository {
-    override suspend fun getAllContentByArtistName(artistName: String): List<Content> =
-        if (contentRemoteService.getMediaDetailByAuthor(artistName).resultCount == 0) {
+    override suspend fun getAllContentByArtistName(artistName: String): List<Content> {
+        val (resultCount, results) = contentRemoteService.getMediaDetailByAuthor(artistName)
+        return if (resultCount == 0) {
             emptyList()
         } else {
-            domainContentMapper.map(contentRemoteService.getMediaDetailByAuthor(artistName).results)
+            domainContentMapper.map(results)
         }
+    }
 
     override fun getFavoriteContentFlow(): Flow<List<Content>> =
         contentLocalService.getAllFavouriteContentFlow().map(domainContentMapper::mapFavouriteContentList)
