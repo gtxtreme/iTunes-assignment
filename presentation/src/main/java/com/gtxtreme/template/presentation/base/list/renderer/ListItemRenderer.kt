@@ -3,7 +3,10 @@ package com.gtxtreme.template.presentation.base.list.renderer
 import android.view.LayoutInflater // ktlint-disable import-ordering
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
-import com.wednesday.template.presentation.base.UIListItemBase
+import com.gtxtreme.template.presentation.base.UIListItemBase
+import com.gtxtreme.template.presentation.base.list.renderer.Inflater
+import com.gtxtreme.template.presentation.base.list.renderer.ItemRenderer
+import com.gtxtreme.template.presentation.base.UIListItemBase
 import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
 
 typealias Inflater<T> = (inflater: LayoutInflater, viewGroup: ViewGroup, attachToParent: Boolean) -> T

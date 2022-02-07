@@ -1,7 +1,7 @@
 package com.gtxtreme.template.presentation.base.list
 
-import com.wednesday.template.presentation.base.UIListItemBase
-import com.wednesday.template.presentation.base.UIText
+import com.gtxtreme.template.presentation.base.UIListItemBase
+import com.gtxtreme.template.presentation.base.UIText
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

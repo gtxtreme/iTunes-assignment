@@ -1,6 +1,6 @@
 package com.gtxtreme.template.presentation.base.list.viewholder
 
-import com.wednesday.template.presentation.base.UIListItemBase
+import com.gtxtreme.template.presentation.base.UIListItemBase
 
 interface ViewHolderBinder<T : UIListItemBase> {
 

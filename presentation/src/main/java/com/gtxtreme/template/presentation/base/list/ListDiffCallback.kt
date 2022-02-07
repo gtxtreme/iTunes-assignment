@@ -1,7 +1,7 @@
 package com.gtxtreme.template.presentation.base.list
 
 import androidx.recyclerview.widget.DiffUtil
-import com.wednesday.template.presentation.base.UIListItemBase
+import com.gtxtreme.template.presentation.base.UIListItemBase
 
 class ListDiffCallback(
     private val oldList: List<UIListItemBase>,
