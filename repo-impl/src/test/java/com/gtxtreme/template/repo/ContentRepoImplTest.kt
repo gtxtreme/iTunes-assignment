@@ -12,7 +12,13 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
-import org.mockito.kotlin.*
+import org.mockito.kotlin.any
+import org.mockito.kotlin.mock
+import org.mockito.kotlin.times
+import org.mockito.kotlin.verify
+import org.mockito.kotlin.verifyNoMoreInteractions
+import org.mockito.kotlin.verifyZeroInteractions
+import org.mockito.kotlin.whenever
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import kotlin.time.ExperimentalTime
@@ -21,7 +27,6 @@ class ContentRepoImplTest {
 
     private lateinit var mediaContentLocalService: MediaContentLocalService
     private lateinit var mediaContentRemoteService: MediaContentRemoteService
-
     private lateinit var domainContentMapper: DomainContentMapper
     private lateinit var contentRepository: ContentRepository
 
