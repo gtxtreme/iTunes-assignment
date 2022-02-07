@@ -2,18 +2,17 @@ package com.gtxtreme.template.presentation.home
 
 import com.gtxtreme.template.interactor.content.FavouriteContentInteractor
 import com.gtxtreme.template.navigation.BaseNavigator
-import com.gtxtreme.template.presentation.base.UIList
-import com.gtxtreme.template.presentation.base.UIText
-import com.gtxtreme.template.presentation.base.UIToolbar
 import com.gtxtreme.template.presentation.content.UIContent
 import com.gtxtreme.template.presentation.home.base.BaseViewModelTest
 import com.gtxtreme.template.presentation.search.SearchScreen
-import com.gtxtreme.template.resources.R
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
-import org.mockito.kotlin.*
+import org.mockito.kotlin.mock
+import org.mockito.kotlin.times
+import org.mockito.kotlin.verify
+import org.mockito.kotlin.whenever
 
 @ExperimentalCoroutinesApi
 class HomeViewModelTest : BaseViewModelTest() {
@@ -59,8 +58,6 @@ class HomeViewModelTest : BaseViewModelTest() {
 
             // Then
             verify(getFavouriteContentInteractor, times(1)).removeContentAsFavourite(testUiContent)
-
         }
     }
-
 }

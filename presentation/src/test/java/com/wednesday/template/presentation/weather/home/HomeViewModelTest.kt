@@ -1,8 +1,8 @@
 package com.wednesday.template.presentation.weather.home
 
+import com.gtxtreme.template.presentation.R
 import com.wednesday.template.interactor.weather.FavouriteWeatherInteractor
 import com.wednesday.template.navigation.home.HomeNavigator
-import com.gtxtreme.template.presentation.R
 import com.wednesday.template.presentation.base.BaseViewModelTest
 import com.wednesday.template.presentation.base.UIList
 import com.wednesday.template.presentation.base.UIText

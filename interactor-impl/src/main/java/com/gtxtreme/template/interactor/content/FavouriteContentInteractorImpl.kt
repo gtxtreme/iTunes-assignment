@@ -8,7 +8,6 @@ import com.gtxtreme.template.interactor.base.CoroutineContextController
 import com.gtxtreme.template.presentation.base.UIList
 import com.gtxtreme.template.presentation.content.UIContent
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import timber.log.Timber
 

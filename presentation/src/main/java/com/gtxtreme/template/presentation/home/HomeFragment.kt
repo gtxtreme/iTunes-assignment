@@ -42,7 +42,6 @@ class HomeFragment :
                 listComponent.setData(screenState.items)
             }
         }
-
     }
 
     override fun onEffect(effect: Effect) {}
