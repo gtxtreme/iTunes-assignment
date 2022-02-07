@@ -9,13 +9,12 @@
     android:background="@android:color/transparent"
     android:clickable="true"
     android:focusable="true"
-    android:visibility="gone"
     tools:visibility="visible">
 
     <ProgressBar
         android:id="@+id/progressBarHolder"
         android:layout_gravity="center"
-        style="?android:attr/progressBarStyle"
+        android:indeterminate="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:visibility="visible" />

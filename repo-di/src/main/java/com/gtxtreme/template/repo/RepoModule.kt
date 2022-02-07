@@ -6,7 +6,7 @@ import org.koin.dsl.module
 
 val repoModule = module {
     single<ContentRepository> {
-        ContentRepoImpl(get(), get())
+        ContentRepoImpl(get(), get(), get())
     }
 
     single<DomainContentMapper> {
