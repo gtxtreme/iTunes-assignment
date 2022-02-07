@@ -7,6 +7,7 @@ import androidx.viewbinding.ViewBinding
 import com.gtxtreme.template.presentation.R
 import com.gtxtreme.template.presentation.base.UIListItemBase
 import com.gtxtreme.template.presentation.base.list.ListAdapter
+import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
 import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
 import kotlin.reflect.KClass
 
@@ -14,7 +15,8 @@ abstract class BaseNestedListViewHolder<T : UIListItemBase>(
     viewBinding: ViewBinding
 ) : BaseViewHolder<T>(viewBinding) {
 
-    protected val renderers: MutableList<Pair<KClass<*>, ListItemRenderer<UIListItemBase>>> = mutableListOf()
+    protected val renderers: MutableList<Pair<KClass<*>, ListItemRenderer<UIListItemBase>>> =
+        mutableListOf()
 
     private val nestedRecyclerView: RecyclerView
         get() = itemView.findViewById(R.id.nestedRecyclerView)
@@ -26,11 +28,12 @@ abstract class BaseNestedListViewHolder<T : UIListItemBase>(
         renderers.add(T::class to (renderer as ListItemRenderer<UIListItemBase>))
     }
 
-    fun setNestedViewHolderPool(viewPool: RecyclerView.RecycledViewPool) = nestedRecyclerView.apply {
-        nestedRecyclerView.layoutManager = LinearLayoutManager(itemView.context)
-        nestedRecyclerView.adapter = ListAdapter(intentChannel, renderers)
-        nestedRecyclerView.setRecycledViewPool(viewPool)
-    }
+    fun setNestedViewHolderPool(viewPool: RecyclerView.RecycledViewPool) =
+        nestedRecyclerView.apply {
+            nestedRecyclerView.layoutManager = LinearLayoutManager(itemView.context)
+            nestedRecyclerView.adapter = ListAdapter(intentChannel, renderers)
+            nestedRecyclerView.setRecycledViewPool(viewPool)
+        }
 
     @CallSuper
     override fun onBindInternal() {
