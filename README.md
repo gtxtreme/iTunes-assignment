@@ -3,9 +3,15 @@
 An Android Application built to fetch sample content from the [Itunes API] (https://itunes.apple.com) as an assignment to get hands on the best practices followed for projects at Wednesday
 
 ## Screens
-<kbd>
-<img src="https://user-images.githubusercontent.com/98303832/152785866-f4e1832d-6b95-4d30-a82d-6bb1c9708282.png" height="400"/>
-</kbd>
+<p float="left">
+  <kbd>
+   <img src="https://user-images.githubusercontent.com/98303832/152785866-f4e1832d-6b95-4d30-a82d-6bb1c9708282.png" height="400"/>
+  </kbd>
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/98303832/152788274-89e48b71-3f3a-4865-9914-7628fbe8c374.png" height="400"/>
+  </kbd>
+</p>
+
 
 
 ## Getting Started
