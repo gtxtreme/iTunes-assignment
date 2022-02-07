@@ -1,6 +1,6 @@
 ## Itunes API
 
-An Android Application built to fetch sample content from the [Itunes API] (https://itunes.apple.com) as an assignment to get hands on the best practices followed for projects at Wednesday
+An Android Application built to fetch sample content from the [Itunes API](https://itunes.apple.com) as an assignment to get hands on the best practices followed for projects at Wednesday
 
 ## Screens
 <p float="left">
