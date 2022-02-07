@@ -13,13 +13,6 @@ import com.gtxtreme.template.presentation.base.component.StatefulComponent
 import com.gtxtreme.template.presentation.base.intent.Intent
 import com.gtxtreme.template.presentation.base.intent.IntentHandler
 import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
-import com.gtxtreme.template.presentation.base.UIList
-import com.gtxtreme.template.presentation.base.UIListItemBase
-import com.gtxtreme.template.presentation.base.component.StatefulComponent
-import com.gtxtreme.template.presentation.base.intent.Intent
-import com.gtxtreme.template.presentation.base.intent.IntentHandler
-import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
-import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel

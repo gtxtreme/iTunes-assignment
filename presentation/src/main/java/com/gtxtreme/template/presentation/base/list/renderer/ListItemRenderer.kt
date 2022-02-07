@@ -1,11 +1,8 @@
 package com.gtxtreme.template.presentation.base.list.renderer
 
-import android.view.LayoutInflater // ktlint-disable import-ordering
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
-import com.gtxtreme.template.presentation.base.UIListItemBase
-import com.gtxtreme.template.presentation.base.list.renderer.Inflater
-import com.gtxtreme.template.presentation.base.list.renderer.ItemRenderer
 import com.gtxtreme.template.presentation.base.UIListItemBase
 import com.gtxtreme.template.presentation.base.list.viewholder.BaseViewHolder
 

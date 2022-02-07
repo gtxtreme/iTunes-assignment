@@ -6,10 +6,6 @@ import com.gtxtreme.template.presentation.base.UIListItemBase
 import com.gtxtreme.template.presentation.base.intent.Intent
 import com.gtxtreme.template.presentation.base.intent.IntentHandler
 import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
-import com.gtxtreme.template.presentation.base.UIListItemBase
-import com.gtxtreme.template.presentation.base.intent.Intent
-import com.gtxtreme.template.presentation.base.intent.IntentHandler
-import com.gtxtreme.template.presentation.base.list.renderer.ListItemRenderer
 
 internal class ListComponent<T, I : Intent>(
     listViewModel: T,
