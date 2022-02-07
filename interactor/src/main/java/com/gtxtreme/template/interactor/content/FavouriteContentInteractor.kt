@@ -10,5 +10,7 @@ interface FavouriteContentInteractor {
 
     suspend fun removeContentAsFavourite(content: UIContent)
 
+    fun getAllFavouriteContent(): Flow<List<UIContent>>
+
     fun getFavouriteContentUIList(): Flow<UIList>
 }

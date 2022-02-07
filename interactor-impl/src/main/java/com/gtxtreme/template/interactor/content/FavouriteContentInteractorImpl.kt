@@ -8,6 +8,7 @@ import com.gtxtreme.template.interactor.base.CoroutineContextController
 import com.gtxtreme.template.presentation.base.UIList
 import com.gtxtreme.template.presentation.content.UIContent
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import timber.log.Timber
 
@@ -30,6 +31,12 @@ class FavouriteContentInteractorImpl(
         coroutineContextController.switchToDefault {
             removeFavouriteUseCase(uiContentMapper.mapContent(content))
         }
+    }
+
+    override fun getAllFavouriteContent(): Flow<List<UIContent>> {
+        return getFavouriteContentUseCase(Unit)
+            .map(uiContentMapper::mapFavouriteContent)
+            .flowOn(coroutineContextController.dispatcherDefault)
     }
 
     override fun getFavouriteContentUIList(): Flow<UIList> {
