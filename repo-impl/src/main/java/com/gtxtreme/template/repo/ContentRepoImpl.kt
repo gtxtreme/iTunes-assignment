@@ -15,9 +15,9 @@ class ContentRepoImpl(
 ) :
     ContentRepository {
 
-    override suspend fun getAllContentByArtistName(artistName: String): List<Content> =
-       val response = contentRemoteService.getMediaDetailByAuthor(artistName)
-        if (response.resultCount == 0) {
+    override suspend fun getAllContentByArtistName(artistName: String): List<Content> {
+        val response = contentRemoteService.getMediaDetailByAuthor(artistName)
+        return if (response.resultCount == 0) {
             emptyList()
         } else {
             domainContentMapper.map(response.results)
@@ -25,7 +25,8 @@ class ContentRepoImpl(
     }
 
     override fun getFavoriteContentFlow(): Flow<List<Content>> =
-        contentLocalService.getAllFavouriteContentFlow().map(domainContentMapper::mapFavouriteContentList)
+        contentLocalService.getAllFavouriteContentFlow()
+            .map(domainContentMapper::mapFavouriteContentList)
 
     override suspend fun markContentAsFavourite(content: Content) {
         Timber.d("Marking Content as Favourite: ${content.trackName}")
