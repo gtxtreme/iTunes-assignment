@@ -1,9 +1,14 @@
 name: CI
+
 on:
   push:
     branches:
       - main
   pull_request:
+  
+env:
+  APP_LOCATION: app/build/outputs/apk/debug/app-debug.apk
+  
 jobs:
   lint:
     name: Lint
@@ -78,8 +83,18 @@ jobs:
         with:
           tag: ${{steps.tag_version.outputs.new_tag}}
           body: New Release Created
-          artifacts: app/build/outputs/apk/debug/app-debug.apk
+          artifacts: ${{env.APP_LOCATION}}
           artifactErrorsFailBuild: true
+          
+      - name: Upload apk to App Center
+        uses: wzieba/AppCenter-Github-Action@v1
+        with:
+          appName: Wednesday-Test/Android-Template
+          token: ${{secrets.APPCENTER_USER_API_KEY}}
+          group: Testers
+          file: ${{env.APP_LOCATION}}
+          notifyTesters: true
+          debug: true
           
           
           
