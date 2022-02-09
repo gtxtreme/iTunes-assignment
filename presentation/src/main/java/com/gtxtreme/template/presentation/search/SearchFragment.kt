@@ -20,6 +20,7 @@ import com.gtxtreme.template.resources.databinding.FragmentSearchAltBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
+// Making this change to test the CI
 class SearchFragment :
     BaseFragment<FragmentSearchAltBinding, SearchScreen, SearchScreenState, BaseNavigator, SearchViewModel>() {
     override val viewModel: SearchViewModel by viewModel()
