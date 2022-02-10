@@ -1,3 +1,4 @@
+echo "Current working directory $pwd"
 currentVersionCode=$(awk '/versionCode/ {print $2}' app.gradle)
 
 status=$?
