@@ -13,14 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy the apk
     steps:
-      - name: Checkout latest source code
       - uses: actions/checkout@v2f
-      - name: Setting up JDK
       - uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
           java-version: '11'
-      - name: Check gradle caches
       - uses: actions/cache@v2
         with:
           path: |
@@ -30,10 +27,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Build the Debug APK
-      - run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug
       - name: Generate the new Tag from Version Code
-      - id: new_tag
-      - run: bash scripts/generate_new_version_code.sh
+        id: new_tag
+        run: bash scripts/generate_new_version_code.sh
         working-directory: ./app
       - name: Generate release with the tag
         uses: ncipollo/release-action@v1
