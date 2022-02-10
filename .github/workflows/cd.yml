@@ -18,6 +18,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+      - name: Check gradle caches
       - uses: actions/cache@v2
         with:
           path: |
@@ -35,7 +36,7 @@ jobs:
       - name: Generate release with the tag
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{steps.tag_version.outputs.new_tag}}
+          tag: ${{steps.new_tag.outputs.NEW_TAG}}
           body: New Release Created
           artifacts: ${{env.APP_LOCATION}}
           artifactErrorsFailBuild: true
