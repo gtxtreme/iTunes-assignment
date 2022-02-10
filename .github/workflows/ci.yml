@@ -1,9 +1,18 @@
 name: CI
+
 on:
   push:
     branches:
       - main
   pull_request:
+  
+env:
+  APP_LOCATION: app/build/outputs/apk/debug/app-debug.apk
+  ORG_NAME: Wednesday-Test # The organisation name
+  GROUP_NAME: Testers # The group name, you can create as many as you want but mention the one you want to notify
+  APP_NAME: Android-Template # The app name, under wh
+  
+  
 jobs:
   lint:
     name: Lint
@@ -78,8 +87,18 @@ jobs:
         with:
           tag: ${{steps.tag_version.outputs.new_tag}}
           body: New Release Created
-          artifacts: app/build/outputs/apk/debug/app-debug.apk
+          artifacts: ${{env.APP_LOCATION}}
           artifactErrorsFailBuild: true
+          
+      - name: Upload apk to App Center
+        uses: wzieba/AppCenter-Github-Action@v1
+        with:
+          appName: ${{env.ORG_NAME}}/${{env.APP_NAME}}
+          token: ${{secrets.APPCENTER_USER_API_KEY}}
+          group: ${{env.GROUP_NAME}}
+          file: ${{env.APP_LOCATION}}
+          notifyTesters: true
+          debug: true
           
           
           
