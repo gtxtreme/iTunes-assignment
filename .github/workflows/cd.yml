@@ -36,7 +36,7 @@ jobs:
       - name: Generate release with the tag
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{steps.new_tag.outputs.NEW_TAG}}
+          tag: ${{env.NEW_TAG}}
           body: New Release Created
           artifacts: ${{env.APP_LOCATION}}
           artifactErrorsFailBuild: true
