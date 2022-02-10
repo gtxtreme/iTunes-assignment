@@ -31,8 +31,8 @@ jobs:
       - name: Generate the new Tag from Version Code
         id: new_tag
         run:  |
-        cd app
-        bash generate_new_version_code.sh
+          cd app
+          bash generate_new_version_code.sh
       - name: Generate release with the tag
         uses: ncipollo/release-action@v1
         with:
