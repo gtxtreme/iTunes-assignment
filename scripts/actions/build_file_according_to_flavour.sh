@@ -11,3 +11,5 @@ else
   echo "Current Branch is Not master, Proceeding with flavour build"
   bash $GRADLE_PATH `echo "assemble${FLAVOUR_NAME}Release"`
 fi
+
+echo "RELEASE_OUTPUT_FILE=app/build/outputs/apk/$FLAVOUR_NAME/release/">>$GITHUB_ENV
