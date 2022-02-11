@@ -2,11 +2,6 @@ name: CD
 on:
   workflow_dispatch:
 
-env:
-  APP_LOCATION: app/build/outputs/apk/release/app-*.apk
-  KEY_ALIAS: ${{secrets.KEY_ALIAS}}
-  KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
-  KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
 
 jobs:
   build:
@@ -32,6 +27,12 @@ jobs:
         with:
           fileName: '$GITHUB_WORKSPACE/app/keystore/android_template.keystore'
           encodedString: ${{ secrets.KEYSTORE }}
+        env:
+          APP_LOCATION: app/build/outputs/apk/release/app-*.apk
+          KEY_STORE_PATH: ${{ steps.decode_keystore.outputs.filePath }}
+          KEY_ALIAS: ${{secrets.KEY_ALIAS}}
+          KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
+          KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
       - name: Build the Release APK
         run: |
           bash scripts/actions/build_file_according_to_flavour.sh
