@@ -25,7 +25,7 @@ jobs:
         id: decode_keystore
         uses: timheuer/base64-to-file@v1
         with:
-          fileName: 'keystore/android_template.keystore'
+          fileName: 'android_template.keystore'
           encodedString: ${{ secrets.KEYSTORE }}
         env:
           APP_LOCATION: app/build/outputs/apk/release/app-*.apk
