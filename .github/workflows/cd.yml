@@ -27,6 +27,8 @@ jobs:
         with:
           fileName: 'android_template.keystore'
           encodedString: ${{ secrets.KEYSTORE }}
+      - name: Setting up environment variables
+        run: env
         env:
           APP_LOCATION: app/build/outputs/apk/release/app-*.apk
           KEY_STORE_PATH: ${{ steps.decode_keystore.outputs.filePath }}
