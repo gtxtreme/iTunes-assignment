@@ -36,7 +36,7 @@ jobs:
         run: ./gradlew assembleRelease
       - name: list the contents of the directory
         run: |
-          ls ${{ github.workspace }}/app/build/outputs/release
+          ls ${{ github.workspace }}/app/build/outputs/apk/release
       - name: Generate the new Tag from Version Code
         id: new_tag
         run:  |
