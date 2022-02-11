@@ -49,4 +49,8 @@ jobs:
           body: New Release Created
           artifacts: ${{env.APP_LOCATION}}
           artifactErrorsFailBuild: true
-
+      - name: Commit new version code changes
+        run: |
+          git add app/app.gradle
+          git commit -m "Bumped versionCode by 1"
+          git push origin
