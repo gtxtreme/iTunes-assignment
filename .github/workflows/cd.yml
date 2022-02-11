@@ -33,10 +33,8 @@ jobs:
           fileName: 'keystore/android_template.keystore'
           encodedString: ${{ secrets.KEYSTORE }}
       - name: Build the Release APK
-        run: ./gradlew assembleRelease
-      - name: list the contents of the directory
         run: |
-          ls ${{ github.workspace }}/app/build/outputs/apk/release
+          bash build_file_according_to_flavour.sh
       - name: Generate the new Tag from Version Code
         id: new_tag
         run:  |
@@ -51,4 +49,5 @@ jobs:
           artifactErrorsFailBuild: true
       - name: Commit new version code changes
         run: |
+          cd app
           bash commit_and_update.sh
