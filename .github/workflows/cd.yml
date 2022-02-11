@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  APP_LOCATION: app/build/outputs/apk/debug/app-release.apk
+  APP_LOCATION: app/build/outputs/apk/release/app-*.apk
   KEY_ALIAS: ${{secrets.KEY_ALIAS}}
   KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
   KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
@@ -35,6 +35,9 @@ jobs:
         with:
           fileName: 'keystore/android_template.keystore'
           encodedString: ${{ secrets.KEYSTORE }}
+      - name: list the contents of the directory
+        run: |
+            ls app/build/outputs/release
       - name: Build the Release APK
         run: ./gradlew assembleRelease
       - name: Generate the new Tag from Version Code
@@ -51,6 +54,4 @@ jobs:
           artifactErrorsFailBuild: true
       - name: Commit new version code changes
         run: |
-          git add app/app.gradle
-          git commit -m "Bumped versionCode by 1"
-          git push origin
+          bash commit_and_update.sh
