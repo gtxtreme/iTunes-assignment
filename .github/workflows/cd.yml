@@ -33,9 +33,10 @@ jobs:
           KEY_ALIAS: ${{secrets.KEY_ALIAS}}
           KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
           KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
-      - name: Check the default keystore path
-        run: |
-          echo "$KEY_STORE_PATH $KEY_PASSWORD"
+      - name: Check the environment keystore path
+        run: echo ${{ env.KEY_STORE_PATH }}
+      - name: Check the step output
+        run : echo ${{ steps.decode_keystore.outputs.filePath }}
       - name: Build the Release APK
         run: |
           bash scripts/actions/build_file_according_to_flavour.sh
