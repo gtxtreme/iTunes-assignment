@@ -2,7 +2,7 @@ CURRENT_BRANCH=$(git branch --show-current)
 echo "$CURRENT_BRANCH"
 
 FLAVOUR_NAME="qa"
-GRADLE_PATH=${{ github.workspace }}/gradlew
+GRADLE_PATH=$GITHUB_WORKSPACE/gradlew
 
 if [ "master" == "$CURRENT_BRANCH" ]; then
   echo "Current Branch is $CURRENT_BRANCH , proceeding with release build"
