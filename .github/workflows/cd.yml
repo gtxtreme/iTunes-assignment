@@ -6,7 +6,10 @@ on:
   workflow_dispatch:
 
 env:
-  APP_LOCATION: app/build/outputs/apk/debug/app-debug.apk
+  APP_LOCATION: app/build/outputs/apk/debug/app-release.apk
+  KEY_ALIAS: ${{secrets.KEY_ALIAS}}
+  KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
+  KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
 
 jobs:
   build:
@@ -26,8 +29,14 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-      - name: Build the Debug APK
-        run: ./gradlew assembleDebug
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'keystore/android_template.keystore'
+          encodedString: ${{ secrets.KEYSTORE }}
+      - name: Build the Release APK
+        run: ./gradlew assembleRelease
       - name: Generate the new Tag from Version Code
         id: new_tag
         run:  |

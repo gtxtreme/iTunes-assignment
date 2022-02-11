@@ -5,6 +5,18 @@ apply plugin: 'kotlin-kapt'
 apply from: "$rootProject.projectDir/android.gradle"
 
 android {
+    signingConfigs {
+
+        release {
+            storeFile file(System.getenv("KEY_STORE_PATH") ?: "keystore/android_template.keystore")
+            storePassword System.getenv("KEYSTORE_PASSWORD")
+            keyAlias System.getenv("KEY_ALIAS")
+            keyPassword System.getenv("KEY_PASSWORD")
+        }
+
+    }
+
+
     defaultConfig {
         applicationId "com.wednesday.template"
         versionCode 1
@@ -15,6 +27,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 }
