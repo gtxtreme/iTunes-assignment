@@ -1,8 +1,5 @@
 name: CD
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 
 env:
@@ -39,7 +36,7 @@ jobs:
         run: ./gradlew assembleRelease
       - name: list the contents of the directory
         run: |
-          ls ${{env.GITHUB_WORKSPACE}}/app/build/outputs/release
+          ls ${{ github.workspace }}/app/build/outputs/release
       - name: Generate the new Tag from Version Code
         id: new_tag
         run:  |
