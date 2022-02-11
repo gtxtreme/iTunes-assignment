@@ -1,9 +1,12 @@
-currentVersionCode=$(awk '/versionCode/ {print $2}' app.gradle)
+currentVersionCode=$(awk '/versionCode/ {print $2}' ${{ github.workspace }}/app/app.gradle)
 
-sed -i 's/versionCode [0-9a-zA-Z -_]*/versionCode '$currentVersionCode'/' app.gradle # Making changes to files permanent using sed
+# Making changes to files permanent using sed
+let "currentVersionCode=currentVersionCode+1"
+sed -i 's/versionCode [0-9a-zA-Z -_]*/versionCode '$currentVersionCode'/' ${{ github.workspace }}/app/app.gradle
+
 
 # Adding those permanent changes back to version control
-git add app/app.gradle
+git add ${{ github.workspace }}/app/app.gradle
 git commit -m "Bumped versionCode by 1"
 #!/bin/sh
 set -e

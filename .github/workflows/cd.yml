@@ -34,12 +34,11 @@ jobs:
           encodedString: ${{ secrets.KEYSTORE }}
       - name: Build the Release APK
         run: |
-          bash build_file_according_to_flavour.sh
+          bash scripts/actions/build_file_according_to_flavour.sh
       - name: Generate the new Tag from Version Code
         id: new_tag
         run:  |
-          cd app
-          bash generate_new_version_code.sh
+          bash scripts/actions/generate_new_version_code.sh
       - name: Generate release with the tag
         uses: ncipollo/release-action@v1
         with:
@@ -49,5 +48,4 @@ jobs:
           artifactErrorsFailBuild: true
       - name: Commit new version code changes
         run: |
-          cd app
-          bash commit_and_update.sh
+          bash scripts/actions/commit_and_update.sh

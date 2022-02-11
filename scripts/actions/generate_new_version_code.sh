@@ -1,6 +1,5 @@
-echo "Current working directory $pwd"
-currentVersionCode=$(awk '/versionCode/ {print $2}' app.gradle) # Regex filter to grab 2 from "versionCode 2"
-currentVersionName=$(awk '/versionName/ {print $2}' app.gradle | sed 's/\"//g') #Regex filter to grab 2.0 from "versionName 2.0"
+currentVersionCode=$(awk '/versionCode/ {print $2}' ${{ github.workspace }}/app/app.gradle) # Regex filter to grab 2 from "versionCode 2"
+currentVersionName=$(awk '/versionName/ {print $2}' ${{ github.workspace }}/app/app.gradle | sed 's/\"//g') #Regex filter to grab 2.0 from "versionName 2.0"
 status=$?
 
 if [ "$status" = 0 ]; then
