@@ -22,8 +22,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Decode Keystore
-        id: decode_keystore
         uses: timheuer/base64-to-file@v1
+        id: decode_keystore
         with:
           fileName: 'android_template.keystore'
           encodedString: ${{ secrets.KEYSTORE }}
@@ -33,6 +33,9 @@ jobs:
           KEY_ALIAS: ${{secrets.KEY_ALIAS}}
           KEY_PASSWORD: ${{secrets.KEY_PASSWORD}}
           KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
+      - name: Check the default keystore path
+        run: |
+          echo "$KEY_STORE_PATH $KEY_PASSWORD"
       - name: Build the Release APK
         run: |
           bash scripts/actions/build_file_according_to_flavour.sh
